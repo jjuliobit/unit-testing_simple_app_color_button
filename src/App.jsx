@@ -1,28 +1,32 @@
-import React from "react";
-import "./style.css";
+import "./App.css";
+import { useState } from "react";
+import { kebabCaseToTitleCase } from "./helpers";
 
 function App() {
-  const [disabled, setDisabled] = React.useState(false);
-  const [buttonColor, setButtonColor] = React.useState('red');
-  const nextColor = buttonColor === "red" ? "blue" : "red";
+  const [disabled, setDisabled] = useState(false);
+  const [buttonColor, setButtonColor] = useState("medium-violet-red");
+  const nextColorClass =
+    buttonColor === "medium-violet-red" ? "midnight-blue" : "medium-violet-red";
+  const nextColorTitleCase = kebabCaseToTitleCase(nextColorClass);
+  const className = disabled ? "gray" : buttonColor;
+
   return (
     <div>
-      <button 
-      className={buttonColor} 
-      onClick={() => setButtonColor(nextColor)}
-      disabled={disabled}
+      <button
+        className={className}
+        disabled={disabled}
+        onClick={() => setButtonColor(nextColorClass)}
       >
-        Change to {nextColor}
-        </button>
-        <br />
-        <input 
-        type="checkbox" 
-        id="disabled-button-checkbox" 
+        Change to {nextColorTitleCase}
+      </button>
+      <br />
+      <input
+        type="checkbox"
+        id="disable-button-checkbox"
         defaultChecked={disabled}
         onChange={(e) => setDisabled(e.target.checked)}
-        >
-        </input>
-        <label htmlFor="disabled-button-checkbox">Disable button</label>
+      />
+      <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
 }
