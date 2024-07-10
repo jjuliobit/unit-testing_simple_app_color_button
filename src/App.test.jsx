@@ -3,8 +3,8 @@ import App from "./App";
 
 describe('should change color', () => {
     it('button color to flow', () => {
-        //render
-        render(<App/>);
+        // render
+        render(<App />);
 
         //find button element
         const buttonElement = screen.getByRole("button", {name: /blue/i});
@@ -20,5 +20,21 @@ describe('should change color', () => {
         
         // check the button color to blue
         expect(buttonElement).toHaveClass("blue");
+    });
+
+    it("checkbox flow", () => {
+        // render
+        render(<App />);
+
+        // find element
+        const buttonElement = screen.getByRole("button", {name: /blue/i});
+
+        const checkboxElement = screen.getByRole("checkbox", {
+            name: /disable button/i,
+        });
+
+        // check initial conditions
+        expect(buttonElement).toBeEnabled();
+        expect(checkboxElement).not.toBeChecked();
     });
 });

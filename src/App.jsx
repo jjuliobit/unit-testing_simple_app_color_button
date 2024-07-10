@@ -6,7 +6,18 @@ function App() {
   const nextColor = buttonColor === "red" ? "blue" : "red";
   return (
     <div>
-      <button className={buttonColor} onClick={() => setButtonColor(nextColor)}>Change to {nextColor}</button>
+      <button 
+      className={buttonColor} 
+      onClick={() => setButtonColor(nextColor)}>
+        Change to {nextColor}
+        </button>
+        <br />
+        <input 
+        type="checkbox" 
+        id="disabled-button-checkbox" 
+        defaultChecked={false}>
+        </input>
+        <label htmlFor="disabled-button-checkbox">Disable button</label>
     </div>
   );
 }
