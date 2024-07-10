@@ -164,3 +164,34 @@ npm test
 - [creating a Vite project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 - [Vitest Testing Library example](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
 - [Vitest ESLint plugin](https://www.npmjs.com/package/eslint-plugin-vitest)
+
+
+# Unit Tests examples
+
+1. As funções da Testing Library, especificamente do pacote `@testing-library/react`. Aqui está um breve resumo de cada uma delas:
+
+   - **`render`**: Essa função é usada para renderizar um componente React no ambiente de teste. Ela retorna um conjunto de utilitários que podem ser usados para interagir com o componente renderizado.
+
+   - **`screen`**: Esse objeto fornece uma maneira conveniente de acessar as funções de consulta do DOM. Ele é uma referência global ao `document.body` e é frequentemente usado em testes para buscar elementos na tela.
+
+   - **`fireEvent`**: Essa função é usada para disparar eventos DOM em elementos renderizados. Pode ser usada para simular eventos como cliques, mudanças de entrada, pressionamentos de tecla, etc.
+
+2. As funções `describe`, `it`, `expect` e a biblioteca Jest/ViteTest. Aqui está um breve resumo de cada uma delas:
+
+   - **`describe`**: Essa função é usada para agrupar testes relacionados. Ela cria um bloco de testes, permitindo que você organize seus testes de maneira lógica.
+
+   - **`it`** (ou `test`): Essa função é usada para definir um único teste. Dentro dela, você descreve o comportamento esperado e realiza asserções para verificar se o código se comporta conforme esperado.
+
+   - **`expect`**: Essa função é usada para criar asserções. Você a usa para verificar se um valor é igual ao valor esperado, se uma função lança um erro, se um objeto contém uma determinada propriedade, etc.
+
+   - **Jest**: Jest é uma estrutura de testes completa que fornece todas essas funções (`describe`, `it/test`, `expect`). Ele também inclui funcionalidades como mocks, spies e snapshots.
+
+   - **Vitest**: Vitest é uma alternativa ao Jest, projetada para ser mais rápida e leve, especialmente em projetos que usam Vite. Ele também fornece as funções `describe`, `it/test`, e `expect`.
+
+3. Funções específicas da biblioteca `@testing-library/jest-dom`. Aqui está um breve resumo de cada uma delas:
+
+   - **`toHaveClass`**: Essa asserção verifica se um elemento possui uma determinada classe CSS.
+
+   - **`getByRole`**: Essa função é usada para buscar um elemento no DOM pelo seu papel (role), como "button", "heading", etc. É uma função da Testing Library, especificamente `@testing-library/react` ou `@testing-library/dom`.
+
+   - **`toBeEnabled`**: Essa asserção verifica se um elemento está habilitado. É útil para testar se elementos como botões ou campos de formulário estão habilitados.
